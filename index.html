@@ -76,7 +76,8 @@
 
     .slider-center img {
       width: 100%;
-      height: 280px;
+      height: 200px;
+      margin-top: 40px;
     }
 
     .slider-center .item {
@@ -91,6 +92,20 @@
       filter: none;
       opacity: 1.0;
       outline: none;
+      
+    }
+    .slick-current.slick-active.item > img {
+      height: 280px;
+      margin: 0;
+      /* transition: all 0.1s; */
+    }
+
+    .slick-dots {
+      bottom: -41px;
+    }
+    .slick-dots li {
+      margin: 0;
+      width: 15px;
     }
   </style>
 </head>
@@ -341,7 +356,10 @@
       centerPadding: '60px',
       slidesToShow: 1,
       autoplay: true,
-      autoplaySpeed: 5000,
+      autoplaySpeed: 1000,
+      // speed: 300,
+      // cssEase: 'ease-in-out',
+      dots: true,
       responsive: [
         {
           breakpoint: 768,
