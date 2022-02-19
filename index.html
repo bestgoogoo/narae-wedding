@@ -7,6 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"
+    integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>모바일 청첩장 갤러리</title>
   <style>
     body {
@@ -94,7 +97,8 @@
 
 <body>
   <div class="wrapper">
-    <div
+    <button onclick="copy()">계좌번호 : <span class="test">30-303</span></button>
+    <div id="예식장 지도"
       style="font: 12px AppleSDGothicNeo-Regular, dotum, sans-serif; letter-spacing: -1px; width: 360px; height: 442px; color: rgb(51, 51, 51); position: relative;">
       <div style="height: 240px;">
         <a href="https://map.kakao.com/?urlX=506353&amp;urlY=1110417&amp;itemId=7991279&amp;q=%EC%95%84%EB%AA%A8%EB%A6%AC%EC%8A%A4%20%EA%B0%95%EB%82%A8%EB%A9%94%EB%A6%AC%EC%B8%A0%ED%83%80%EC%9B%8C%EC%A0%90&amp;srcid=7991279&amp;map_type=TYPE_MAP&amp;from=roughmap"
@@ -114,12 +118,10 @@
             로드뷰
           </a>
           <span
-            style="width: 1px;padding: 0;margin: 0 8px 0 9px;height: 11px;vertical-align: top;position: relative;top: 2px;border-left: 1px solid #d0d0d0;float: left;">
-          </span><a
+            style="width: 1px;padding: 0;margin: 0 8px 0 9px;height: 11px;vertical-align: top;position: relative;top: 2px;border-left: 1px solid #d0d0d0;float: left;"></span><a
             target="_blank"
             href="https://map.kakao.com/?from=roughmap&amp;eName=%EC%95%84%EB%AA%A8%EB%A6%AC%EC%8A%A4%20%EA%B0%95%EB%82%A8%EB%A9%94%EB%A6%AC%EC%B8%A0%ED%83%80%EC%9B%8C%EC%A0%90&amp;eX=506353&amp;eY=1110417"
-            style="float:left;height:15px;padding-top:1px;line-height:15px;color:#000;text-decoration: none;">
-            길찾기</a><span
+            style="float:left;height:15px;padding-top:1px;line-height:15px;color:#000;text-decoration: none;">길찾기</a><span
             style="width: 1px;padding: 0;margin: 0 8px 0 9px;height: 11px;vertical-align: top;position: relative;top: 2px;border-left: 1px solid #d0d0d0;float: left;"></span><a
             target="_blank"
             href="https://map.kakao.com?map_type=TYPE_MAP&amp;from=roughmap&amp;srcid=7991279&amp;itemId=7991279&amp;q=%EC%95%84%EB%AA%A8%EB%A6%AC%EC%8A%A4%20%EA%B0%95%EB%82%A8%EB%A9%94%EB%A6%AC%EC%B8%A0%ED%83%80%EC%9B%8C%EC%A0%90&amp;urlX=506353&amp;urlY=1110417"
@@ -302,6 +304,10 @@
 
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+    integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
   <script>
@@ -358,6 +364,46 @@
       ]
     });
 
+  </script>
+
+<script>
+  const TT = document.querySelector('.test');
+
+  function copyToClipboard(val) {
+    const t = document.createElement("textarea");
+    document.body.appendChild(t);
+    t.value = val;
+    t.select();
+    document.execCommand('copy'); // js 처리 통한 ctrl + C
+    document.body.removeChild(t); // 임시로 만들어진 textarea 를 body 에서 삭제
+  }
+  
+
+  function copy() {
+    const 복사값 = TT.textContent;
+    copyToClipboard(복사값);
+    
+    toastr.options = {
+      "closeButton": false,
+      "debug": false,
+      "newestOnTop": false,
+      "progressBar": false,
+      "positionClass": "toast-bottom-full-width",
+      "preventDuplicates": false,
+      "onclick": null,
+      "showDuration": "300",
+      "hideDuration": "1000",
+      "timeOut": "5000",
+      "extendedTimeOut": "1000",
+      "showEasing": "swing",
+      "hideEasing": "linear",
+      "showMethod": "fadeIn",
+      "hideMethod": "fadeOut"
+    }
+
+    // toastr.success('계좌번호 복사');
+    Command: toastr["success"]("Are you the six fingered man?")
+  }
   </script>
 </body>
 
