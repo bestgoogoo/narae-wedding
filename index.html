@@ -10,20 +10,56 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"
     integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <title>모바일 청첩장</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       display: flex;
       justify-content: center;
     }
 
+    .nav__ul {
+      display: flex;
+      justify-content: flex-end;
+      position: fixed;
+      top: 0;
+      width: 400px;
+      padding: 10px;
+      background-color: rgb(238, 158, 198);
+    }
+    .nav__li {
+      list-style: none;
+      width: fit-content;
+      padding: 4px;
+    }
+    .nav__li button {
+      border: none;
+      background-color: inherit;
+      color: white;
+      font-size: 10px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .wrapper {
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 400px;
+      background-color: rgba(255, 245, 254, 0.8);
+    }
+
     .sub-title {
-      width: 90%;
+      width: 100%;
       display: flex;
       justify-items: flex-start;
-      margin-top: 100px;
+      margin-top: 200px;
       margin-bottom: 20px;
     }
+
     .sub-title span {
       font: 20px AppleSDGothicNeo-Regular, dotum, sans-serif;
       font-weight: 700;
@@ -32,13 +68,15 @@
       padding: 10px;
     }
 
-    .wrapper {
+    .초대글 {
+      margin-top: 100px;
+      width: 90%;
+      height: 600px;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      width: 400px;
-      height: 100%;
-      background-color: rgba(255, 245, 254, 0.8);
+      background-color: beige;
+      font-weight: 700;
     }
 
     .slider-for {
@@ -75,7 +113,7 @@
       height: 42px;
       -webkit-filter: grayscale(0%);
       filter: none;
-      opacity: 1.0;
+      opacity: 1;
       outline: none;
       border: none;
     }
@@ -85,7 +123,7 @@
     }
 
     .slider-center {
-      width: 400px;
+      width: 420px;
       height: 280px;
     }
 
@@ -105,9 +143,8 @@
     .slider-center .slick-current.slick-active {
       -webkit-filter: grayscale(0%);
       filter: none;
-      opacity: 1.0;
+      opacity: 1;
       outline: none;
-      
     }
     .slick-current.slick-active.item > img {
       height: 280px;
@@ -116,32 +153,44 @@
     }
 
     .slick-dots {
-      bottom: -41px;
-    }
-    .slick-dots li {
-      margin: 0;
-      width: 15px;
+      bottom: -40px;
     }
 
-    #계좌 {
+    .slick-dots li {
+      width: 10px;
+    }
+
+    .달력 {
+      margin-top: 20px;
       width: 90%;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: beige;
+      font-weight: 700;
+    }
+
+    .계좌 {
+      width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-bottom: 20px;
     }
-    #계좌 img {
+    .계좌 img {
       background-color: white;
       padding: 10px;
-      width: 100px;
+      width: 90px;
       height: 30px;
     }
-    #계좌 span {
+    .계좌 span {
       background-color: inherit;
       color: rgba(105, 105, 105, 0.459);
       font-weight: 600;
-      font-size: 20px;
+      font-size: 18px;
     }
-    #계좌 button{
+    .계좌 button {
       border: none;
       background-color: rgb(153, 153, 153);
       font-weight: 600;
@@ -150,11 +199,46 @@
       cursor: pointer;
       padding: 10px;
     }
+
+    footer {
+      position: relative;
+      bottom: 0;
+      right: 100;
+      margin-top: 500px;
+      font-size: 8px;
+      opacity: 0.8;
+      font-weight: 700;
+    }
   </style>
+  <title>모바일 청첩장</title>
 </head>
 
 <body>
+  <nav class="nav">
+    <ul class="nav__ul">
+      <li class="nav__li">
+        <button class="scrollTo" data-direction="초대글">>초대글</button>
+      </li>
+      <li class="nav__li">
+        <button class="scrollTo" data-direction="웨딩사진">>웨딩사진</button>
+      </li>
+      <li class="nav__li">
+        <button class="scrollTo" data-direction="달력">달력</button>
+      </li>
+      <li class="nav__li">
+        <button class="scrollTo" data-direction="찾아오시는길">찾아 오시는 길</button>
+      </li>
+      <li class="nav__li">
+        <button class="scrollTo" data-direction="마음보내실곳">마음 보내실 곳</button>
+      </li>
+    </ul>
+  </nav>
   <div class="wrapper">
+    <div class="초대글">
+      <span>
+        초대글
+      </span>
+    </div>
     <!-- <div id="예식장 지도"
       style="font: 12px AppleSDGothicNeo-Regular, dotum, sans-serif; letter-spacing: -1px; width: 360px; height: 442px; color: rgb(51, 51, 51); position: relative;">
       <div style="height: 240px;">
@@ -374,6 +458,14 @@
           alt="">
       </div>
     </div>
+
+    <div class="sub-title">
+      <span>달력</span>
+    </div>
+    <div class="달력">
+      <span>달력<br/><br/>D-Day</span>
+    </div>
+
     <div class="sub-title">
       <span>찾아 오시는 길</span>
     </div>
@@ -394,20 +486,30 @@
     <div class="sub-title">
       <span>마음 전하실 곳</span>
     </div>
-    <div id="계좌">
+    <div class="계좌">
+      <span>오빠에게</span>
       <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdnweb01.wikitree.co.kr%2Fwebdata%2Feditor%2F201912%2F27%2F201912271416052355.png&f=1&nofb=1" alt="">
       <span class="account">9-8572-3038-12</span>
       <button onclick="copy()">복사</button>
     </div>
-    
+    <div class="계좌">
+      <span>나래에게</span>
+      <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdnweb01.wikitree.co.kr%2Fwebdata%2Feditor%2F201912%2F27%2F201912271416052355.png&f=1&nofb=1" alt="">
+      <span class="account">9-8572-3038-12</span>
+      <button onclick="copy()">복사</button>
+    </div>
+    <div class="계좌">
+      <span>기주에게</span>
+      <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdnweb01.wikitree.co.kr%2Fwebdata%2Feditor%2F201912%2F27%2F201912271416052355.png&f=1&nofb=1" alt="">
+      <span class="account">9-8572-3038-12</span>
+      <button onclick="copy()">복사</button>
+    </div>
+    <footer>@bestgoogoo</footer>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-    crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
-    integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
   <script id="슬릭 슬라이더">
@@ -501,6 +603,23 @@
       // toastr.success('계좌번호 복사');
       Command: toastr["success"]("Copied")
     }
+  </script>
+  
+  <script>
+    const scrollMove = (event) => {
+        if (event.target.dataset.direction === '웨딩사진')
+            window.scrollTo(0, 786);
+        else if (event.target.dataset.direction === '달력')
+            window.scrollTo(0, 1360);
+        else if (event.target.dataset.direction === '찾아오시는길')
+            window.scrollTo(0, 2044);
+        else if (event.target.dataset.direction === '마음보내실곳')
+            window.scrollTo(0, 2705);
+        else if (event.target.dataset.direction === '초대글')
+            window.scrollTo(0, 0);
+    }
+
+    document.querySelector('.nav').addEventListener('click', scrollMove);
   </script>
 </body>
 
