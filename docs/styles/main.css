@@ -7248,7 +7248,6 @@ button.bg-dark:focus {
 }
 
 .embed-responsive .embed-responsive-item,
-.embed-responsive iframe,
 .embed-responsive embed,
 .embed-responsive object,
 .embed-responsive video {
@@ -10138,7 +10137,7 @@ body {
 /* Home Page Style */
 .ww-home-page {
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url("../images/narae_home.JPG") no-repeat center center;
+    url("../images/pic_narae_home.JPG") no-repeat center center;
   background-size: cover;
   background-position: 50%;
   height: 100vh;
