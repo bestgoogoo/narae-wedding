@@ -72,6 +72,11 @@ section {
   display: block;
 }
 
+footer {
+  display: flex;
+  justify-content: end;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
