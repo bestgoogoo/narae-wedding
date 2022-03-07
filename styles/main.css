@@ -52,6 +52,7 @@ html {
   -ms-text-size-adjust: 100%;
   -ms-overflow-style: scrollbar;
   -webkit-tap-highlight-color: transparent;
+  height: auto;
 }
 
 @-ms-viewport {
@@ -70,11 +71,6 @@ main,
 nav,
 section {
   display: block;
-}
-
-footer {
-  display: flex;
-  justify-content: end;
 }
 
 body {
@@ -10443,4 +10439,74 @@ body {
   bottom: 0;
   left: 0;
   margin: 0px 15px 15px 15px;
+}
+
+/* END Page Style */
+.ww-end-page {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("../images/pic_hanbok_wide_01.JPG") no-repeat center center;
+  background-size: cover;
+  background-position: 50%;
+  height: 100vh;
+  min-height: 480px;
+}
+
+.ww-end-page .ww-wedding-announcement {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  height: 60%;
+  text-align: center;
+  color: #fff;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+  letter-spacing: 2px;
+}
+
+.ww-end-page .ww-wedding-announcement .ww-announcement-container {
+  max-width: 600px;
+  text-align: center;
+  z-index: 999;
+}
+
+.ww-end-page .ww-wedding-announcement img {
+  max-height: 350px;
+  width: auto;
+}
+
+@media (max-width: 480px) {
+  .ww-end-page .ww-wedding-announcement img {
+    max-height: 250px;
+    width: auto;
+  }
+}
+
+.ww-end-page .ww-wedding-announcement .ww-couple-name {
+  font-size: 70px;
+}
+
+@media (max-width: 576px) {
+  .ww-end-page .ww-wedding-announcement .ww-couple-name {
+    font-size: 50px;
+  }
+}
+
+.ww-end-page:before {
+  content: "";
+  background-color: rgba(245, 138, 119, 0.2);
+  width: 100%;
+  height: 100%;
+  height: 100vh;
+  min-height: 480px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+footer {
+  font-weight: 400;
+  color: white;
+  text-shadow: black 1px 0 2px;
+  font: sans-serif;
+  display: flex;
+  justify-content: end;
 }
