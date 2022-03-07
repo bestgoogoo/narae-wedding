@@ -27,7 +27,6 @@
 <body id="top">
 <header></header>
 <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.2"></script>
 <div class="page-content">
     <div class="div">
         <div class="ww-home-page" id="home">
@@ -37,8 +36,7 @@
                     <p class="h2 mt-5 ww-title" style="font-family: 'Gugi', cursive; font-size:0.9em; margin: bottom 50px;">
                         | WE ARE GETTING MARRIED |
                     </p>
-                    <p class="h2 mt-5 ww-title"
-                       style="font-family: 'Noto Serif KR', serif; font-size:0.8em; letter-spacing:-1px">
+                    <p class="h2 mt-5 ww-title" style="font-family: 'Noto Serif KR', serif; font-size:0.8em; letter-spacing:-1px">
                         <b style="font-size:1.4em;">2022. 04. 16. Sat 3:30 PM</b>
                         <br>서울 해군호텔 W웨딩홀 노블레스홀
                     </p>
@@ -57,6 +55,7 @@
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item"><a class="nav-link smooth-scroll" href="#home">Home</a></li>
                             <li class="nav-item"><a class="nav-link smooth-scroll" href="#couple">Couple</a></li>
+                            <li class="nav-item"><a class="nav-link smooth-scroll" href="#story">Story</a></li>
                             <li class="nav-item"><a class="nav-link smooth-scroll" href="#events">Events</a></li>
                             <li class="nav-item"><a class="nav-link smooth-scroll" href="#gallery">Gallery</a></li>
                             <li class="nav-item"><a class="nav-link smooth-scroll" href="#map">Map</a></li>
@@ -84,6 +83,14 @@
                             <img alt="" class="img-fluid" src="images/pic_couple_guenhye.jpeg"/>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="ww-section" id="story">
+            <div class="container">
+                <h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Noto Serif KR', serif;">우리의 이야기</h2>
+                <div class="my-3">
+                    <a href="https://youtu.be/IavSvdg9nTk"></a>
                 </div>
             </div>
         </div>
@@ -141,7 +148,7 @@
                     <div class="card-columns">
                         <div class="card">
                             <a data-gallery="ww-gallery" data-toggle="lightbox">
-                                <img alt="" class="img-fluid" src="images/pic_narae_couple.JPG"/>
+                                <img alt="" class="img-fluid" id="map-image" src="images/pic_narae_couple.JPG"/>
                             </a>
                         </div>
                         <div class="card">
@@ -219,17 +226,20 @@
                             <a href="http://naver.me/ForE448H">
                                 <img alt="naver-map" class="map-icon" id="naver-map" src="images/map/naver-map.png"/>
                             </a>
-                            <a href="https://map.kakao.com/?q=%EC%84%9C%EC%9A%B8%ED%95%B4%EA%B5%B0%ED%98%B8%ED%85%94">
+                            <a href="https://map.kakao.com/?urlX=481321&urlY=1112284&urlLevel=3&itemId=8146688&q=%ED%95%B4%EA%B5%B0%ED%98%B8%ED%85%94W%EC%9B%A8%EB%94%A9%ED%99%80&srcid=8146688&map_type=TYPE_MAP">
                                 <img alt="kakao-map" class="map-icon" id="kakao-map" src="images/map/kakao-map.png"/>
                             </a>
                         </div>
                         <div class="my-3">
-                            <div id="daumRoughmapContainer1646549992521" class="root_daum_roughmap root_daum_roughmap_landing" style="width: 100%;"></div>
+                            <!-- 1. 약도 노드 -->
+                            <div id="daumRoughmapContainer1646615459988" class="root_daum_roughmap root_daum_roughmap_landing" style="width: 100%; z-index: 999;"></div>
+                            <!-- 2. 설치 스크립트 -->
                             <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+                            <!-- 3. 실행 스크립트 -->
                             <script charset="UTF-8">
                                 new daum.roughmap.Lander({
-                                    "timestamp" : "1646549992521",
-                                    "key" : "29dfd",
+                                    "timestamp" : "1646615459988",
+                                    "key" : "29dji",
                                     // "mapWidth" : "640",
                                     // "mapHeight" : "360"
                                 }).render();
@@ -237,32 +247,33 @@
                         </div>
                     </div>
                 </div>
-        <div class="ww-section ww-rsvp-detail" id="gift">
+            </div>
+        <div class="ww-section" id="gift">
             <div class="container">
                 <div class="col text-center">
                     <h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Noto Serif KR', serif;">마음 전할 곳</h2>
-                    <div>
+                    <div class="계좌리스트">
+                        <div class="h4 gift-margin" style="font-family: 'Noto Serif KR', serif;">신랑측</div>
                         <h6 style="font-family: 'Noto Serif KR', serif;">김주안 : 500876-02-076146 (우체국)</h6>
                         <h6 style="font-family: 'Noto Serif KR', serif;">김길제 : 766-02-220186 (농협은행)</h6>
+                        <div class="h4 gift-margin" style="font-family: 'Noto Serif KR', serif;">신부측</div>
                         <h6 style="font-family: 'Noto Serif KR', serif;">김병석 : 601104-52-005211 (농협은행)</h6>
                         <h6 style="font-family: 'Noto Serif KR', serif;">김근혜 : 1002-856-272449 (우리은행)</h6>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="ww-section" id="ending">
-            <div class="container">
-                <img alt="" class="img-fluid" src="images/pic_hanbok_wide_01.JPG"/>
-                <h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Noto Serif KR', serif;">감사합니다.</h2>
+    </div>
+    <div class="ww-end-page" id="end">
+        <div class="ww-wedding-announcement d-flex align-items-center justify-content-start">
+            <div class="container ww-announcement-container">
+                <p class="ww-couple-name ww-title" style="font-size:3.2em">Thank you</p>
             </div>
         </div>
     </div>
 </div>
-</div>
 <div class="bottom_right"><i class="fa fa-arrow-up fa-2x" id="go-to-top"></i></div>
-
-<footer style="font: 0.7em sans-serif;">@googoopark</footer>
-
+<footer>@googoopark</footer>
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -274,3 +285,4 @@
 
 </body>
 </html>
+
