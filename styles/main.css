@@ -10505,7 +10505,7 @@ body {
 
 footer {
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   left: 10px;
   font-weight: 400;
   color: white;
