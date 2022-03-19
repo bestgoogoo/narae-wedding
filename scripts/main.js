@@ -85,6 +85,6 @@ function copy(account) {
       }
 
       // toastr.success('계좌번호 복사');
-      Command: toastr["success"]("계좌번호가 복사되었습니다.")
+      Command: toastr["info"]("계좌번호를 복사했습니다.")
 }
 

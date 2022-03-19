@@ -37,10 +37,6 @@
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
 }
-/* 토스터 */
-#toast-container > .toast-success {
-  background-color: rgba(245, 138, 119, 1);
-}
 
 *,
 *::before,
@@ -10509,7 +10505,7 @@ body {
 
 footer {
   position: absolute;
-  bottom: 10px;
+  bottom: 0;
   left: 10px;
   font-weight: 400;
   color: white;
@@ -10521,8 +10517,9 @@ footer {
   top: -1;
   border: none;
   padding: 8px;
-  background-color: var(--light);
+  background-color: var(--gray);
   font-family: "Noto Serif KR", serif;
+  color: var(--white);
 }
 
 .account_text {
