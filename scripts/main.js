@@ -28,7 +28,7 @@ $("a.smooth-scroll").click(function (event) {
             event.preventDefault();
             $("html, body").animate(
                 {
-                    scrollTop: target.offset().top
+                    scrollTop: target.offset().top - 350
                 },
                 1000,
                 function () {
@@ -47,4 +47,5 @@ $("a.smooth-scroll").click(function (event) {
             );
         }
     }
+    $(".navbar-toggler").click();
 });
