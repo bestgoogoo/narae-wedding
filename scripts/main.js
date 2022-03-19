@@ -28,7 +28,7 @@ $("a.smooth-scroll").click(function (event) {
             event.preventDefault();
             $("html, body").animate(
                 {
-                    scrollTop: target.offset().top - 350
+                    scrollTop: window.innerWidth > 860 ? target.offset().top : target.offset().top - 350
                 },
                 1000,
                 function () {

@@ -10516,11 +10516,15 @@ footer {
 }
 
 #btn {
+  margin-bottom: 3px;
+  top: -1;
   border: none;
-  width: 80%;
-  height: 50px;
-  margin: 10px 0;
-  background-color: rgba(1, 1, 1, 1);
+  padding: 8px;
   background-color: var(--light);
-  padding: 10px;
+  font-family: "Noto Serif KR", serif;
+}
+
+.account_text {
+  padding: 15px;
+  margin-bottom: 5px;
 }
