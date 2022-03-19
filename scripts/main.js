@@ -49,3 +49,42 @@ $("a.smooth-scroll").click(function (event) {
     }
     $(".navbar-toggler").click();
 });
+
+
+// 클립보드 복사 함수
+function copyToClipboard(account) {
+    // 스크립트로 텍스트 쓰는 곳 임시 만들고 삭제되도록 구성
+    const textArea = document.createElement("textarea");
+    document.body.appendChild(textArea);
+    textArea.value = account;
+    textArea.select();
+    document.execCommand('copy'); // js 처리 통한 ctrl + C
+    document.body.removeChild(textArea); // 임시로 만들어진 textarea 를 body 에서 삭제
+}
+
+function copy(account) {
+    copyToClipboard(account);
+    // alert(account)
+
+    toastr.options = {
+        "closeButton": false,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": false,
+        "positionClass": "toast-bottom-center",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "3000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+      }
+
+      // toastr.success('계좌번호 복사');
+      Command: toastr["success"]("계좌번호가 복사되었습니다.")
+}
+

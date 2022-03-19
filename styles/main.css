@@ -37,6 +37,10 @@
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
 }
+/* 토스터 */
+#toast-container > .toast-success {
+  background-color: rgba(245, 138, 119, 1);
+}
 
 *,
 *::before,
@@ -10509,4 +10513,14 @@ footer {
   font: sans-serif;
   display: flex;
   justify-content: end;
+}
+
+#btn {
+  border: none;
+  width: 80%;
+  height: 50px;
+  margin: 10px 0;
+  background-color: rgba(1, 1, 1, 1);
+  background-color: var(--light);
+  padding: 10px;
 }
