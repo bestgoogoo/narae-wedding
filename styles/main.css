@@ -10447,6 +10447,7 @@ body {
 
 /* END Page Style */
 .ww-end-page {
+  position: relative;
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url("../images/pic_hanbok_wide_01.JPG") no-repeat center center;
   background-size: cover;
@@ -10507,12 +10508,12 @@ body {
 }
 
 footer {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
   font-weight: 400;
   color: white;
-  text-shadow: black 1px 0 2px;
   font: sans-serif;
-  display: flex;
-  justify-content: end;
 }
 
 #btn {
